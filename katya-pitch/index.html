@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Katya Vineyards — Ocala's Award-Winning Winery & Fine Dining</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1410; --wine:#3a0d12; --gold:#d5b24a; --gold2:#e1ba45; --cream:#f6efe2;
+    --char:#1f1812; --mut:#b9a98c; --line:rgba(213,178,74,.20);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ink);color:var(--cream);overflow-x:hidden;
+    font:400 16px/1.8 "Inter","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  .serif{font-family:"Cormorant Garamond",Georgia,serif}
+  h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:.3px}
+  a{color:inherit;text-decoration:none}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+  @media(max-width:680px){.wrap{padding:0 24px}}
+
+  /* ---- kicker / shared editorial labels ---- */
+  .kicker{font-family:"Inter",sans-serif;font-size:11px;font-weight:500;letter-spacing:4px;
+    text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+
+  /* ---- wordmark (echoes the registered logo: KATYA over double-ruled VINEYARDS ®) ---- */
+  .wm{display:inline-block;text-align:center;font-family:"Cormorant Garamond",Georgia,serif;color:var(--cream);line-height:1}
+  .wm .k{display:block;font-size:24px;font-weight:600;letter-spacing:7px;padding-left:7px}
+  .wm .v{display:block;margin-top:5px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);
+    padding:4px 0;font-family:"Inter",sans-serif;font-size:9px;font-weight:500;letter-spacing:6px;
+    color:var(--gold);text-transform:uppercase;padding-left:6px}
+  .wm .v .reg{font-size:8px;vertical-align:super;margin-left:1px}
+  .wm.lg .k{font-size:30px;letter-spacing:9px}
+  .wm.lg .v{font-size:10px;letter-spacing:7px}
+
+  /* ---- nav ---- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+    padding:24px 40px;transition:background .35s ease,padding .35s ease,border-color .35s ease;
+    border-bottom:1px solid transparent}
+  nav.scrolled{background:rgba(18,13,9,.92);backdrop-filter:blur(10px);padding:16px 40px;border-color:var(--line)}
+  nav .logo{font-family:"Cormorant Garamond",Georgia,serif;font-size:25px;font-weight:600;color:var(--cream);letter-spacing:2px}
+  nav .logo span{color:var(--gold)}
+  nav ul{display:flex;gap:38px;list-style:none;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:400}
+  nav ul a{color:var(--cream);opacity:.85;transition:.2s;position:relative;padding-bottom:3px}
+  nav ul a:hover{opacity:1;color:var(--gold)}
+  nav .book{border:1px solid var(--gold);color:var(--gold);padding:11px 24px;font-size:11px;
+    letter-spacing:2px;text-transform:uppercase;transition:.25s}
+  nav .book:hover{background:var(--gold);color:#1c0f07}
+  @media(max-width:880px){nav ul{display:none}nav,nav.scrolled{padding:18px 24px}}
+  @media(max-width:560px){nav .book{padding:9px 15px;font-size:10px;letter-spacing:1.5px}}
+
+  /* ---- hero ---- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero .bg{position:absolute;inset:0;z-index:0}
+  .hero .bg::after{content:"";position:absolute;inset:0;background:
+    radial-gradient(120% 90% at 78% 12%,rgba(213,178,74,.16),transparent 52%),
+    linear-gradient(180deg,rgba(20,12,9,.55) 0%,rgba(20,12,9,.62) 45%,rgba(26,20,16,.97) 100%)}
+  .hero-in{position:relative;z-index:2;max-width:780px;padding:120px 0 60px}
+  .badge{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--gold);color:var(--gold);
+    font-family:"Inter",sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:9px 20px;margin-bottom:34px}
+  .hero h1{font-size:clamp(27px,6.2vw,92px);color:var(--cream);margin-bottom:26px;font-weight:500;text-wrap:balance}
+  .hero h1 em{color:var(--gold);font-style:italic;font-weight:400}
+  .quote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(20px,2.4vw,27px);
+    color:#e9dcc4;margin-bottom:44px;max-width:600px;line-height:1.5}
+  .quote span{display:block;font-style:normal;font-family:"Inter",sans-serif;font-size:12px;letter-spacing:3px;
+    text-transform:uppercase;color:var(--gold);margin-top:14px}
+  .cta{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+  @media(max-width:560px){.cta{flex-direction:column;align-items:flex-start;gap:22px}.btn{width:100%;text-align:center}}
+  .btn{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;
+    padding:16px 34px;transition:.25s;font-weight:500}
+  .btn-g{background:var(--gold);color:#1c0f07}.btn-g:hover{background:var(--gold2);transform:translateY(-2px)}
+  .btn-o{border:1px solid rgba(246,239,226,.45);color:var(--cream)}
+  .btn-o:hover{border-color:var(--cream);background:rgba(246,239,226,.06)}
+  .link-u{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;
+    color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:5px;transition:.2s}
+  .link-u:hover{color:var(--gold2);border-color:var(--gold2)}
+  .rating{margin-top:30px;font-family:"Inter",sans-serif;font-size:13px;letter-spacing:1px;color:#d8c8aa;font-weight:300}
+  .rating .stars{color:var(--gold);letter-spacing:2px}
+  .rating b{color:var(--cream);font-weight:500}
+
+  /* ---- generic section ---- */
+  section{padding:140px 0}
+  @media(max-width:880px){section{padding:90px 0}}
+
+  /* ---- story / intro ---- */
+  .story{text-align:center;background:var(--char);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .story h2{font-size:clamp(34px,4.6vw,56px);color:var(--cream);margin-bottom:30px;max-width:14ch;margin-left:auto;margin-right:auto}
+  .story p{max-width:640px;margin:0 auto;font-size:18px;color:#d8c8aa;line-height:1.95;font-weight:300}
+
+  /* ---- alternating image + text blocks ---- */
+  .feature{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0}
+  .feature + .feature{border-top:1px solid var(--line)}
+  .feature .media{position:relative;min-height:560px;overflow:hidden}
+  .feature .media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(20,12,9,.35))}
+  .feature .copy{padding:110px 80px}
+  .feature:nth-child(even) .media{order:2}
+  .feature .num{font-family:"Cormorant Garamond",serif;font-size:15px;letter-spacing:3px;color:var(--gold);
+    display:block;margin-bottom:18px;opacity:.8}
+  .feature h3{font-size:clamp(32px,3.6vw,46px);color:var(--cream);margin-bottom:20px}
+  .feature p{color:#c9b896;font-size:16.5px;line-height:1.9;font-weight:300;max-width:46ch;margin-bottom:34px}
+  @media(max-width:880px){
+    .feature{grid-template-columns:1fr}
+    .feature .media{min-height:360px;order:0 !important}
+    .feature:nth-child(even) .media{order:0}
+    .feature .copy{padding:64px 24px}
+  }
+
+  /* ---- reservations band (full-bleed photo) ---- */
+  .band{position:relative;text-align:center;padding:170px 0;overflow:hidden}
+  .band .bg{position:absolute;inset:0;z-index:0}
+  .band .bg::after{content:"";position:absolute;inset:0;background:
+    radial-gradient(110% 120% at 50% 0%,rgba(213,178,74,.14),transparent 55%),
+    linear-gradient(180deg,rgba(28,9,12,.82),rgba(20,12,9,.9))}
+  .band .wrap{position:relative;z-index:2}
+  .band h2{font-size:clamp(38px,5vw,64px);color:var(--cream);margin-bottom:22px}
+  .band p{color:#e3d4b6;max-width:540px;margin:0 auto 38px;font-weight:300;font-size:17px}
+
+  /* ---- recognition / awards ---- */
+  .awards{text-align:center;background:var(--char)}
+  .awards h2{font-size:clamp(32px,4.4vw,54px);color:var(--cream);margin-bottom:16px}
+  .awards .sub{color:#c9b896;font-weight:300;max-width:560px;margin:0 auto 60px;font-size:16.5px;line-height:1.85}
+  .agrid{display:grid;grid-template-columns:repeat(4,1fr);text-align:left;
+    border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  .agrid .award{border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:36px 32px;min-height:188px;display:flex;flex-direction:column;justify-content:center;transition:background .25s}
+  .agrid .award:hover{background:rgba(213,178,74,.05)}
+  .award .yr{font-family:"Cormorant Garamond",serif;color:var(--gold);font-size:21px;font-weight:500;display:block;margin-bottom:12px;letter-spacing:1px}
+  .award .ti{font-family:"Cormorant Garamond",serif;color:var(--cream);font-size:21px;line-height:1.25;display:block;margin-bottom:12px}
+  .award .src{font-family:"Inter",sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mut);font-weight:400;line-height:1.6}
+  .award.google{background:rgba(213,178,74,.08)}
+  .award.google .stars{color:var(--gold);font-size:18px;letter-spacing:3px;display:block;margin-bottom:10px}
+  .award.google .big{font-family:"Cormorant Garamond",serif;color:var(--cream);font-size:34px;font-weight:500;display:block;line-height:1}
+  @media(max-width:980px){.agrid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.agrid{grid-template-columns:1fr}.agrid .award{min-height:0}}
+
+  /* ---- footer ---- */
+  footer{background:#120d09;padding:90px 0 36px;border-top:1px solid var(--line);font-size:14px;color:var(--mut);font-weight:300}
+  .fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px}
+  @media(max-width:880px){.fgrid{grid-template-columns:1fr;gap:34px}}
+  footer h4{font-family:"Inter",sans-serif;color:var(--gold);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:16px;font-weight:500}
+  footer p{line-height:1.9}
+  footer a{transition:.2s}footer a:hover{color:var(--gold)}
+  .mocknote{background:#0c0906;color:#6b5c44;text-align:center;font-size:11px;letter-spacing:1.5px;padding:11px 16px}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#" class="wm"><span class="k">KATYA</span><span class="v">Vineyards<span class="reg">®</span></span></a>
+  <ul>
+    <li><a href="#">Wine</a></li>
+    <li><a href="#">Dining</a></li>
+    <li><a href="#">Visit</a></li>
+    <li><a href="#">Events</a></li>
+  </ul>
+  <a href="#" class="book">Reserve a Table</a>
+</nav>
+
+<header class="hero">
+  <div class="bg"><img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1920&q=75" alt="Vineyard rows at golden hour"></div>
+  <div class="wrap"><div class="hero-in">
+    <span class="badge">★ 2021 Florida Winery of the Year</span>
+    <h1>Ocala's Award-Winning <em>Winery</em><br>& Fine Dining</h1>
+    <p class="quote">"Where there is no wine, there is no love."<span>— Euripides</span></p>
+    <div class="cta">
+      <a href="#" class="btn btn-g">Reserve a Table</a>
+      <a href="#" class="link-u">Explore the Wine List</a>
+    </div>
+    <div class="rating"><span class="stars">★★★★★</span> <b>4.8</b> · 256 Google reviews</div>
+  </div></div>
+</header>
+
+<section class="story">
+  <div class="wrap">
+    <div class="kicker">Welcome to Katya</div>
+    <h2>A Taste of Old-World Elegance in Central Florida</h2>
+    <p>Handcrafted wines, a seasonal fine-dining menu, and an intimate setting in the heart of Ocala —
+    Katya Vineyards is where a glass becomes an evening. Join us for a tasting, a dinner, or your next
+    celebration.</p>
+  </div>
+</section>
+
+<!-- alternating image + text blocks -->
+<div class="features">
+
+  <section class="feature" style="padding:0">
+    <div class="media"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1100&q=72" alt="Glasses of wine being poured"></div>
+    <div class="copy">
+      <span class="num">01 — The Wine List</span>
+      <h3>Poured by the Glass<br>or the Bottle</h3>
+      <p>Estate and small-batch wines — from crisp whites to bold, structured reds — poured by our team
+      and built for the table. Sit down for a guided tasting or take a favorite home.</p>
+      <a href="#" class="link-u">View the Wine List</a>
+    </div>
+  </section>
+
+  <section class="feature" style="padding:0">
+    <div class="media"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1100&q=72" alt="Elegant plated fine-dining dish"></div>
+    <div class="copy">
+      <span class="num">02 — Fine Dining</span>
+      <h3>A Chef-Driven<br>Seasonal Menu</h3>
+      <p>Ocala's destination for an elegant night out — a seasonal menu paired thoughtfully to our wines,
+      plated with care, served in an intimate room. Reservations recommended.</p>
+      <a href="#" class="link-u">See the Dining Menu</a>
+    </div>
+  </section>
+
+  <section class="feature" style="padding:0">
+    <div class="media"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1100&q=72" alt="Candlelit private dining table"></div>
+    <div class="copy">
+      <span class="num">03 — Events & Private Dining</span>
+      <h3>Gather, Celebrate,<br>Toast the Occasion</h3>
+      <p>Live music, wine dinners, casino nights, and holiday celebrations — plus private events and gift
+      cards for any occasion. Let us host your next evening to remember.</p>
+      <a href="#" class="link-u">Explore Events</a>
+    </div>
+  </section>
+
+</div>
+
+<section class="band">
+  <div class="bg"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1920&q=72" alt="Warm fine-dining restaurant interior"></div>
+  <div class="wrap">
+    <div class="kicker" style="color:var(--gold2)">Reservations</div>
+    <h2>Reserve Your Table Tonight</h2>
+    <p>Tastings, dinner service, and special events fill fast. Book in seconds and we'll have a glass waiting.</p>
+    <a href="#" class="btn btn-g">Make a Reservation</a>
+  </div>
+</section>
+
+<section class="awards">
+  <div class="wrap">
+    <div class="kicker">Recognition</div>
+    <h2>An Award-Winning Address</h2>
+    <p class="sub">From Wine Spectator to the New York International Wine Competition — and 256 guests who
+    keep coming back. The honors behind the glass.</p>
+    <div class="agrid">
+      <div class="award">
+        <span class="yr">2021</span>
+        <span class="ti">Florida Winery of the Year</span>
+        <span class="src">New York Int'l Wine Competition</span>
+      </div>
+      <div class="award">
+        <span class="yr">2021 &amp; 2022</span>
+        <span class="ti">Award of Excellence</span>
+        <span class="src">Wine Spectator</span>
+      </div>
+      <div class="award">
+        <span class="yr">2021 &amp; 2022</span>
+        <span class="ti">World's Best Wine Lists — Jury Prize</span>
+        <span class="src">World of Fine Wine</span>
+      </div>
+      <div class="award">
+        <span class="yr">2021</span>
+        <span class="ti">World's Best Wine Lists — One Star</span>
+        <span class="src">World of Fine Wine</span>
+      </div>
+      <div class="award">
+        <span class="yr">2022</span>
+        <span class="ti">Best Family-Owned Winery &amp; Fine Dining, Central FL</span>
+        <span class="src">International Luxury Magazine</span>
+      </div>
+      <div class="award">
+        <span class="yr">2022</span>
+        <span class="ti">Best Romantic Restaurant</span>
+        <span class="src">The Best of Florida</span>
+      </div>
+      <div class="award">
+        <span class="yr">2020</span>
+        <span class="ti">Golden Spoon Award</span>
+        <span class="src">Winner</span>
+      </div>
+      <div class="award google">
+        <span class="stars">★★★★★</span>
+        <span class="big">4.8</span>
+        <span class="src" style="margin-top:8px">256 Google Reviews</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fgrid">
+    <div>
+      <div class="wm lg" style="margin-bottom:22px"><span class="k">KATYA</span><span class="v">Vineyards<span class="reg">®</span></span></div>
+      <p style="max-width:42ch">Award-winning winery, fine dining, and events in Ocala, Florida.<br>Where there is no wine, there is no love.</p>
+      <p style="margin-top:16px;color:var(--gold);font-family:'Inter',sans-serif;font-size:12px;letter-spacing:1px">★★★★★ &nbsp;4.8 · 256 Google reviews</p>
+    </div>
+    <div><h4>Visit</h4><p>Ocala, FL 34470<br>Wed–Sun · Lunch &amp; Dinner</p></div>
+    <div><h4>Explore</h4><p><a href="#">Wine List</a><br><a href="#">Dining Menu</a><br><a href="#">Events</a><br><a href="#">Gift Cards</a></p></div>
+  </div>
+  <div class="wrap" style="margin-top:54px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:#6b5c44;letter-spacing:.5px">
+    Proposed redesign concept · Website by Benchmark Web Development, Ocala FL
+  </div>
+</footer>
+
+<script>
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>40)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+</script>
+</body>
+</html>
