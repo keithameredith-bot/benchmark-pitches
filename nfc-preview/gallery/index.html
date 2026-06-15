@@ -472,6 +472,71 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   .nfc-about-stats { gap: 20px; flex-wrap: wrap; }
 }
 
+
+/* ── NFC map section (contact page) ─── */
+.nfc-map-section {
+  padding: 60px 20px;
+  background: #fff;
+}
+.nfc-map-section h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #16273A;
+  margin: 0 0 24px;
+}
+.nfc-map-img-link {
+  display: block;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #e2e8ef;
+  text-decoration: none;
+}
+.nfc-map-img-link img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity .2s;
+}
+.nfc-map-img-link:hover img { opacity: .88; }
+.nfc-map-overlay {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(22,39,58,.85);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  padding: 7px 18px;
+  border-radius: 20px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.nfc-map-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.nfc-map-footer span {
+  font-size: 15px;
+  color: #444;
+}
+.nfc-map-footer .nfc-btn {
+  padding: 10px 24px;
+  font-size: 14px;
+}
+@media (max-width: 600px) {
+  .nfc-map-section h2 { font-size: 24px; }
+  .nfc-map-footer { flex-direction: column; align-items: flex-start; }
+}
+
 </style>
 </head>
 
