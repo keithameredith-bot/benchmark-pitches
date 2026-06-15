@@ -317,6 +317,146 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   .nfc-home-gallery-photos img { height: 160px; }
 }
 
+
+/* ── NFC About page ─── */
+.nfc-about-chuck { padding: 64px 20px; }
+.nfc-about-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.nfc-about-photo-placeholder {
+  background: #e8edf2;
+  border-radius: 10px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 14px;
+  font-style: italic;
+  border: 2px dashed #ccd5de;
+}
+.nfc-about-photo-col img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+.nfc-about-name-card {
+  text-align: center;
+  margin-top: 14px;
+}
+.nfc-about-name-card strong {
+  display: block;
+  font-size: 18px;
+  color: #16273A;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.nfc-about-name-card span {
+  font-size: 13px;
+  color: #666;
+}
+.nfc-about-bio h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #16273A;
+  line-height: 1.1;
+  margin: 0 0 20px;
+}
+.nfc-about-bio p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+.nfc-about-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 2px solid #e8edf2;
+}
+.nfc-about-stats div { display: flex; flex-direction: column; }
+.nfc-about-stats strong {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  font-weight: 600;
+}
+.nfc-about-stats span {
+  font-size: 17px;
+  font-weight: 700;
+  color: #16273A;
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+}
+.nfc-about-why { padding: 64px 20px; }
+.nfc-about-why h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #16273A;
+  margin: 0 0 16px;
+}
+.nfc-about-lead {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.7;
+  max-width: 740px;
+  margin: 0 0 40px;
+}
+.nfc-about-points { display: flex; flex-direction: column; gap: 28px; }
+.nfc-about-point {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.nfc-check {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: #5E8A37;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 2px;
+  text-align: center;
+  line-height: 28px;
+}
+.nfc-about-point strong {
+  display: block;
+  font-size: 17px;
+  color: #16273A;
+  margin-bottom: 6px;
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.nfc-about-point p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .nfc-about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .nfc-about-photo-placeholder { height: 220px; }
+  .nfc-about-bio h2, .nfc-about-why h2 { font-size: 28px; }
+  .nfc-about-stats { gap: 20px; flex-wrap: wrap; }
+}
+
 </style>
 </head>
 
@@ -351,6 +491,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </li>
 <li id="menu-item-54" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="https://keithameredith-bot.github.io/benchmark-pitches/nfc-preview/service-area/">Service Area</a></li>
 <li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a href="https://keithameredith-bot.github.io/benchmark-pitches/nfc-preview/contact/">Contact</a></li>
+<li id="menu-item-96" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96"><a href="https://keithameredith-bot.github.io/benchmark-pitches/nfc-preview/gallery/">Gallery</a></li>
+<li id="menu-item-97" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-97"><a href="https://keithameredith-bot.github.io/benchmark-pitches/nfc-preview/about/">About</a></li>
 </ul>		</div>
 	</nav><!-- #site-navigation -->
 	</div><!-- data-section="primary_navigation" -->
@@ -478,6 +620,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <li><a href="https://keithameredith-bot.github.io/benchmark-pitches/nfc-preview/contact/">Get a Quote</a></li>
 <li><a href="https://keithameredith-bot.github.io/benchmark-pitches/nfc-preview/privacy-policy/">Privacy Policy</a></li>
 <li><a href="https://keithameredith-bot.github.io/benchmark-pitches/nfc-preview/gallery/">Gallery</a></li>
+<li><a href="https://keithameredith-bot.github.io/benchmark-pitches/nfc-preview/about/">About</a></li>
 </ul></div>
 <div class="nfc-footer-col">
 <h3>Contact</h3>
@@ -536,6 +679,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="https://keithameredith-bot.github.io/benchmark-pitches/nfc-preview/service-area/">Service Area</a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a href="https://keithameredith-bot.github.io/benchmark-pitches/nfc-preview/contact/">Contact</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96"><a href="https://keithameredith-bot.github.io/benchmark-pitches/nfc-preview/gallery/">Gallery</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-97"><a href="https://keithameredith-bot.github.io/benchmark-pitches/nfc-preview/about/">About</a></li>
 </ul>		</div>
 	</nav><!-- #site-navigation -->
 	</div><!-- data-section="mobile_navigation" -->
