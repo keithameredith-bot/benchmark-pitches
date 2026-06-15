@@ -186,6 +186,137 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 }
 /* pill-navbar:end */
 
+
+/* ── NFC photo strip (service pages) ─── */
+.nfc-photo-strip {
+  max-width: 860px;
+  margin: 0 auto 0;
+  padding: 48px 20px 0;
+}
+.nfc-photo-strip-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.nfc-photo-strip-grid figure {
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.nfc-photo-strip-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s ease;
+}
+.nfc-photo-strip-grid figure:hover img {
+  transform: scale(1.03);
+}
+.nfc-photo-strip-grid figcaption {
+  font-size: 13px;
+  color: #666;
+  padding: 8px 4px 0;
+}
+.nfc-photo-strip-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.nfc-photo-strip-link a {
+  color: #5E8A37;
+  font-weight: 600;
+  text-decoration: none;
+}
+.nfc-photo-strip-link a:hover { text-decoration: underline; }
+
+/* ── NFC gallery grid spacing ─── */
+.nfc-photo-grid .kb-gallery-grid {
+  gap: 12px;
+}
+.nfc-photo-grid .kb-gallery-item img {
+  border-radius: 6px;
+}
+.nfc-real-jobs-note {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+  .nfc-photo-strip-grid { grid-template-columns: 1fr; }
+  .nfc-photo-strip-grid img { height: 200px; }
+}
+
+
+/* ── NFC home gallery strip ─── */
+.nfc-home-gallery-strip {
+  background: #16273A;
+  padding: 64px 20px;
+}
+.nfc-home-gallery-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 48px;
+  align-items: center;
+}
+.nfc-home-gallery-text { color: #fff; }
+.nfc-eyebrow-sm {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #5E8A37;
+  margin-bottom: 12px;
+}
+.nfc-home-gallery-text h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+.nfc-home-gallery-text p {
+  font-size: 16px;
+  color: #9ab5c8;
+  margin: 0 0 20px;
+  line-height: 1.6;
+}
+.nfc-home-gallery-text .nfc-flink {
+  color: #5E8A37;
+  font-weight: 600;
+  font-size: 15px;
+}
+.nfc-home-gallery-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.nfc-home-gallery-photos a {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.nfc-home-gallery-photos img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s ease;
+}
+.nfc-home-gallery-photos a:hover img { transform: scale(1.04); }
+
+@media (max-width: 768px) {
+  .nfc-home-gallery-inner { grid-template-columns: 1fr; gap: 28px; }
+  .nfc-home-gallery-text h2 { font-size: 30px; }
+  .nfc-home-gallery-photos img { height: 160px; }
+}
+
 </style>
 </head>
 
