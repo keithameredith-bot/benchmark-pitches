@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Say Taco Tequila Bar & Grill — Best Tacos in Downtown Ocala, FL</title>
+<meta name="description" content="Say Taco Tequila Bar & Grill — the best tacos in town, top-shelf tequila, and live music on the Downtown Ocala Square. Order online or stop in. Ain't no party like a taco party!">
+<link rel="icon" href="img/say-taco-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Pacifico&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#F4A91B; --gold-deep:#E08A12; --coral:#E8552D; --coral-deep:#C9421E;
+    --ink:#15100B; --ink-2:#20180F; --ink-3:#2C2117;
+    --cream:#FBF3E2; --cream-dim:#E8DCC4; --muted:#B9A98C;
+    --lime:#9BC53D; --line:rgba(244,169,27,.18);
+    --shadow:0 18px 50px rgba(0,0,0,.45);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--cream);background:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{line-height:1.05;letter-spacing:.5px}
+  .display{font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:1px;font-weight:400}
+  .script{font-family:'Pacifico',cursive;color:var(--coral);font-weight:400;letter-spacing:0}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;padding:15px 30px;border-radius:50px;transition:transform .15s ease,box-shadow .2s ease;cursor:pointer;border:none}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#231603;box-shadow:0 10px 24px rgba(244,169,27,.32)}
+  .btn-coral{background:linear-gradient(135deg,var(--coral),var(--coral-deep));color:#fff;box-shadow:0 10px 24px rgba(232,85,45,.32)}
+  .btn-ghost{background:transparent;color:var(--cream);border:2px solid rgba(251,243,226,.35)}
+  .btn:hover{transform:translateY(-2px)}
+  .eyebrow{font-family:'Inter';font-weight:800;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+
+  /* ---- Top utility bar ---- */
+  .topbar{background:var(--ink-2);border-bottom:1px solid var(--line);font-size:13.5px;color:var(--cream-dim)}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:42px;flex-wrap:wrap}
+  .topbar a{font-weight:600}
+  .topbar .dot{color:var(--gold);margin:0 10px;opacity:.6}
+
+  /* ---- Header ---- */
+  header{position:sticky;top:0;z-index:50;background:rgba(21,16,11,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:84px;gap:24px}
+  .logo img{height:56px;display:block}
+  nav.main{display:flex;align-items:center;gap:30px}
+  nav.main a{font-weight:600;font-size:15px;color:var(--cream);position:relative}
+  nav.main a:hover{color:var(--gold)}
+  nav.main a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--gold);transition:width .2s}
+  nav.main a:hover::after{width:100%}
+  .header-cta{display:flex;gap:12px;align-items:center}
+  .menu-toggle{display:none;background:none;border:none;color:var(--cream);font-size:28px;cursor:pointer}
+
+  /* ---- Hero ---- */
+  .hero{position:relative;min-height:660px;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:url('img/say-taco-slider-541-drinks.jpg') center/cover no-repeat;transform:scale(1.05)}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(15,11,7,.92) 0%,rgba(15,11,7,.74) 42%,rgba(15,11,7,.32) 100%)}
+  .hero .wrap{position:relative;z-index:2;padding-top:70px;padding-bottom:70px}
+  .hero-inner{max-width:680px}
+  .hero .script{font-size:30px;display:block;margin-bottom:6px}
+  .hero h1{font-size:clamp(44px,7vw,84px);color:#fff;margin:4px 0 8px}
+  .hero h1 .y{color:var(--gold)}
+  .hero .sub{font-size:clamp(17px,2.2vw,21px);color:var(--cream-dim);max-width:560px;margin:18px 0 30px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:34px;padding-top:26px;border-top:1px solid rgba(251,243,226,.15);font-size:14px;color:var(--cream-dim)}
+  .hero-meta b{color:var(--gold);display:block;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+
+  /* ---- Info strip ---- */
+  .strip{background:var(--gold);color:#231603}
+  .strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .strip .cell{padding:26px 20px;text-align:center;border-right:1px solid rgba(35,22,3,.15)}
+  .strip .cell:last-child{border-right:none}
+  .strip .cell .k{font-family:'Anton';text-transform:uppercase;font-size:15px;letter-spacing:1px}
+  .strip .cell .v{font-weight:600;font-size:14.5px;opacity:.85}
+
+  /* ---- Sections ---- */
+  section.pad{padding:96px 0}
+  .ink2{background:var(--ink-2)}
+  .ink3{background:var(--ink-3)}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 56px}
+  .sec-head .script{font-size:26px;display:block;margin-bottom:4px}
+  .sec-head h2{font-size:clamp(32px,5vw,52px);color:#fff}
+  .sec-head p{color:var(--muted);margin-top:14px;font-size:17px}
+
+  /* About split */
+  .split{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+  .split img{width:100%;border-radius:18px;box-shadow:var(--shadow);display:block}
+  .split h2{font-size:clamp(30px,4.5vw,46px);color:#fff;margin:10px 0 18px}
+  .split p{color:var(--cream-dim);margin-bottom:16px;font-size:16.5px}
+  .ticks{list-style:none;margin:22px 0 30px}
+  .ticks li{padding:8px 0 8px 32px;position:relative;color:var(--cream-dim);font-weight:500}
+  .ticks li::before{content:"🌮";position:absolute;left:0;top:7px;font-size:16px}
+
+  /* Menu preview */
+  .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .menu-col h3{font-family:'Anton';text-transform:uppercase;color:var(--gold);font-size:24px;letter-spacing:1px;padding-bottom:14px;margin-bottom:6px;border-bottom:2px solid var(--line);display:flex;align-items:center;gap:10px}
+  .menu-item{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px dashed rgba(251,243,226,.12)}
+  .menu-item .nm{font-weight:700;color:#fff;font-size:16px}
+  .menu-item .ds{color:var(--muted);font-size:13.5px;margin-top:3px}
+  .menu-item .pr{font-family:'Anton';color:var(--coral);font-size:19px;white-space:nowrap}
+  .menu-note{text-align:center;margin-top:46px;color:var(--muted);font-size:14px}
+
+  /* Margarita / tequila band */
+  .band{position:relative;overflow:hidden}
+  .band-bg{position:absolute;inset:0;background:url('img/say-taco-slider-541-drinks.jpg') center/cover;}
+  .band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,11,7,.94),rgba(15,11,7,.6))}
+  .band .wrap{position:relative;z-index:2;padding:96px 24px}
+  .band-inner{max-width:540px}
+  .band h2{font-size:clamp(30px,4.5vw,48px);color:#fff;margin:8px 0 16px}
+  .band p{color:var(--cream-dim);font-size:17px;margin-bottom:26px}
+
+  /* Gallery */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .gallery img{width:100%;height:230px;object-fit:cover;border-radius:14px;display:block;transition:transform .35s ease;cursor:pointer}
+  .gallery img:hover{transform:scale(1.04)}
+  .gallery .tall{grid-row:span 2;height:auto}
+
+  /* Live music */
+  .music{display:grid;grid-template-columns:1fr 1.1fr;gap:50px;align-items:center}
+  .music img{width:100%;border-radius:18px;box-shadow:var(--shadow);display:block}
+  .badge{display:inline-block;background:rgba(155,197,61,.14);color:var(--lime);border:1px solid rgba(155,197,61,.4);font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:7px 16px;border-radius:50px;margin-bottom:18px}
+  .music h2{font-size:clamp(30px,4.5vw,46px);color:#fff;margin-bottom:16px}
+  .music p{color:var(--cream-dim);font-size:16.5px;margin-bottom:16px}
+
+  /* Reviews */
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .review{background:var(--ink-3);border:1px solid var(--line);border-radius:16px;padding:30px}
+  .stars{color:var(--gold);font-size:17px;letter-spacing:2px;margin-bottom:14px}
+  .review p{color:var(--cream-dim);font-style:italic;font-size:15.5px;margin-bottom:16px}
+  .review .who{font-weight:700;color:#fff;font-size:14px}
+
+  /* CTA / location */
+  .visit{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .visit h2{font-size:clamp(30px,4.5vw,46px);color:#fff;margin:8px 0 20px}
+  .info-list{list-style:none}
+  .info-list li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+  .info-list .ic{font-size:20px;width:28px}
+  .info-list b{color:var(--gold);display:block;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+  .info-list span{color:var(--cream-dim)}
+  .map-card{background:var(--ink-3);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+  .map-card img{width:100%;height:260px;object-fit:cover;display:block}
+  .map-card .mc-body{padding:26px}
+  .map-card .mc-body .btn{width:100%;justify-content:center}
+
+  /* Footer */
+  footer{background:#0E0A06;border-top:1px solid var(--line);padding:64px 0 32px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:44px}
+  footer .logo img{height:64px;margin-bottom:18px}
+  footer p{color:var(--muted);font-size:14.5px}
+  .foot-col h4{font-family:'Anton';text-transform:uppercase;color:var(--gold);font-size:16px;letter-spacing:1px;margin-bottom:16px}
+  .foot-col a{display:block;color:var(--cream-dim);padding:6px 0;font-size:14.5px}
+  .foot-col a:hover{color:var(--gold)}
+  .socials{display:flex;gap:12px;margin-top:18px}
+  .socials a{width:40px;height:40px;border-radius:50%;background:var(--ink-3);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+  .socials a:hover{background:var(--gold);color:#231603}
+  .copyright{border-top:1px solid var(--line);padding-top:26px;text-align:center;color:var(--muted);font-size:13px}
+  .copyright .pill{display:inline-block;background:rgba(244,169,27,.1);color:var(--gold);padding:4px 12px;border-radius:50px;font-weight:600;margin-top:8px}
+
+  /* Responsive */
+  @media(max-width:900px){
+    nav.main,.header-cta .btn{display:none}
+    .menu-toggle{display:block}
+    .split,.menu-grid,.music,.visit{grid-template-columns:1fr;gap:34px}
+    .reviews{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr)}
+    .gallery .tall{grid-row:span 1}
+    .strip .wrap{grid-template-columns:1fr}
+    .strip .cell{border-right:none;border-bottom:1px solid rgba(35,22,3,.15)}
+    .foot-grid{grid-template-columns:1fr;gap:30px}
+    section.pad{padding:64px 0}
+    .hero{min-height:auto;padding:30px 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP UTILITY BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div>📍 10 NE 1st St, Downtown Ocala <span class="dot">•</span> Open Tue–Sun</div>
+    <div><a href="tel:3526294700">📞 (352) 629-4700</a></div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap">
+    <a class="logo" href="#"><img src="img/say-taco-top-logo-1-2x.png" alt="Say Taco Tequila Bar & Grill"></a>
+    <nav class="main">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#drinks">Tequila Bar</a>
+      <a href="#music">Live Music</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-gold" href="#order">Order Online</a>
+      <button class="menu-toggle">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="script">Ain't no party like a</span>
+      <h1 class="display">Taco <span class="y">Party</span></h1>
+      <p class="sub">Downtown Ocala's tequila bar &amp; grill serving the <strong>best tacos in town</strong>, top-shelf margaritas, and live music — right on the Square.</p>
+      <div class="hero-cta">
+        <a class="btn btn-coral" href="#order">Order Online →</a>
+        <a class="btn btn-ghost" href="#menu">View the Menu</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>Find Us</b>On the Downtown Square</div>
+        <div><b>The Vibe</b>Tacos · Tequila · Live Music</div>
+        <div><b>Best In Town</b>#3 for Tacos in Ocala</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <div class="cell"><div class="k">🌮 Best Tacos in Town</div><div class="v">American taco bar, fresh every day</div></div>
+    <div class="cell"><div class="k">🍹 Top-Shelf Tequila</div><div class="v">Margaritas &amp; the good stuff on the rocks</div></div>
+    <div class="cell"><div class="k">🎸 Live Music</div><div class="v">Catch Propaganja &amp; more on the Square</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="pad" id="about">
+  <div class="wrap split">
+    <img src="img/say-taco-post-84556.jpg" alt="Ain't no party like a taco party at Say Taco Ocala">
+    <div>
+      <span class="script">Welcome to Say Taco</span>
+      <h2 class="display">Downtown Ocala's Taco &amp; Tequila Headquarters</h2>
+      <p>We took over the corner of the Downtown Square and turned it into the most fun you can have with a taco in one hand and a margarita in the other. Exposed brick, an electric bar, and tacos worth talking about.</p>
+      <ul class="ticks">
+        <li>Hand-built tacos — the best in town, no contest</li>
+        <li>A full tequila bar stacked with top-shelf pours</li>
+        <li>Live music nights that turn dinner into a party</li>
+        <li>Order online for pickup, or grab a seat at the bar</li>
+      </ul>
+      <a class="btn btn-gold" href="#menu">See What's Cooking →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MENU PREVIEW (the SEO showpiece — real text menu) -->
+<section class="pad ink2" id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="script">Eat Up</span>
+      <h2 class="display">The Menu</h2>
+      <p>An electrifying world of taco delights — made fresh, served fast, and best paired with a margarita.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-col">
+        <h3>🌮 Tacos</h3>
+        <div class="menu-item"><div><div class="nm">Carne Asada</div><div class="ds">Grilled steak, onion, cilantro, lime</div></div><div class="pr">$4.5</div></div>
+        <div class="menu-item"><div><div class="nm">Al Pastor</div><div class="ds">Marinated pork, pineapple, onion</div></div><div class="pr">$4.5</div></div>
+        <div class="menu-item"><div><div class="nm">Baja Fish</div><div class="ds">Crispy fish, slaw, chipotle crema</div></div><div class="pr">$5</div></div>
+        <div class="menu-item"><div><div class="nm">Birria</div><div class="ds">Slow-braised beef, consommé to dip</div></div><div class="pr">$5.5</div></div>
+        <div class="menu-item"><div><div class="nm">Carnitas</div><div class="ds">Crispy pork, salsa verde, onion</div></div><div class="pr">$4.5</div></div>
+        <div class="menu-item"><div><div class="nm">Veggie</div><div class="ds">Roasted peppers, black bean, queso</div></div><div class="pr">$4</div></div>
+      </div>
+      <div class="menu-col">
+        <h3>🔥 Plates &amp; Shareables</h3>
+        <div class="menu-item"><div><div class="nm">Taco Party Platter</div><div class="ds">A dozen tacos, your call — feeds the crew</div></div><div class="pr">$42</div></div>
+        <div class="menu-item"><div><div class="nm">Loaded Nachos</div><div class="ds">Queso, pico, jalapeño, add carne asada</div></div><div class="pr">$12</div></div>
+        <div class="menu-item"><div><div class="nm">Street Corn (Elote)</div><div class="ds">Grilled corn, cotija, chili-lime crema</div></div><div class="pr">$7</div></div>
+        <div class="menu-item"><div><div class="nm">Chips &amp; Guac</div><div class="ds">Made-to-order, hass avocado</div></div><div class="pr">$9</div></div>
+        <div class="menu-item"><div><div class="nm">Quesabirria</div><div class="ds">Crispy cheese taco, consommé</div></div><div class="pr">$13</div></div>
+        <div class="menu-item"><div><div class="nm">Churros</div><div class="ds">Cinnamon sugar, chocolate dip</div></div><div class="pr">$7</div></div>
+      </div>
+    </div>
+    <p class="menu-note">Sample menu shown for layout — full menu rebuilt as real, searchable text (not an image) so Google can read every dish.</p>
+    <div style="text-align:center;margin-top:24px">
+      <a class="btn btn-coral" href="#order" id="order">Order Online for Pickup →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TEQUILA BAND -->
+<section class="band" id="drinks">
+  <div class="band-bg"></div>
+  <div class="wrap">
+    <div class="band-inner">
+      <span class="eyebrow">The Tequila Bar</span>
+      <h2 class="display">Margaritas Worth the Drive</h2>
+      <p>House margaritas, top-shelf tequila flights, and frozen pours that hit different on the patio. Whatever you're celebrating — or not — we've got the glass for it.</p>
+      <a class="btn btn-gold" href="#visit">See the Bar →</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="pad" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="script">The Scene</span>
+      <h2 class="display">Tacos, Tequila &amp; Good Times</h2>
+    </div>
+    <div class="gallery">
+      <img class="tall" src="img/say-taco-slider-541-drinks.jpg" alt="Margaritas at Say Taco Ocala">
+      <img src="img/say-taco-slider-7.jpg" alt="Packed bar at Say Taco">
+      <img src="img/say-taco-post-4-1152x648.jpg" alt="Guests at the bar">
+      <img src="img/say-taco-slider-8.jpg" alt="Patio party at Say Taco">
+      <img src="img/say-taco-post-84556.jpg" alt="Taco party box">
+    </div>
+  </div>
+</section>
+
+<!-- LIVE MUSIC -->
+<section class="pad ink2" id="music">
+  <div class="wrap music">
+    <img src="img/say-taco-post-2-1152x648.jpg" alt="Propaganja live at Say Taco Ocala">
+    <div>
+      <span class="badge">Live on the Square</span>
+      <h2 class="display">The Music Never Stops</h2>
+      <p>From <strong>Propaganja</strong> to local favorites, Say Taco brings the live music to Downtown Ocala. Tacos, tequila, and a band — that's a Tuesday turned into a Saturday.</p>
+      <p style="color:var(--muted);font-size:15px">Follow us on social for the next show lineup.</p>
+      <a class="btn btn-coral" href="#visit" style="margin-top:8px">See What's On →</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="pad">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="script">Don't Take Our Word</span>
+      <h2 class="display">Ocala's Talking</h2>
+    </div>
+    <div class="reviews">
+      <div class="review"><div class="stars">★★★★★</div><p>"Hands down the best tacos in Ocala. The birria is unreal and the margaritas are dangerous in the best way."</p><div class="who">— Local Regular</div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>"Great vibe right on the downtown square. Live music, cold drinks, amazing food. Our new spot."</p><div class="who">— Downtown Crowd</div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>"Ain't no party like a taco party — they're not lying. Came for dinner, stayed for the band."</p><div class="who">— Weekend Visitor</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT / LOCATION -->
+<section class="pad ink3" id="visit">
+  <div class="wrap visit">
+    <div>
+      <span class="script">Come See Us</span>
+      <h2 class="display">Find the Party</h2>
+      <ul class="info-list">
+        <li><span class="ic">📍</span><div><b>Location</b><span>10 NE 1st Street, Downtown Ocala, FL 34470 — right on the Square</span></div></li>
+        <li><span class="ic">📞</span><div><b>Call</b><span>(352) 629-4700</span></div></li>
+        <li><span class="ic">🕗</span><div><b>Hours</b><span>Tue–Thu 11a–10p · Fri–Sat 11a–12a · Sun 11a–9p</span></div></li>
+        <li><span class="ic">🛵</span><div><b>Order</b><span>Pickup via Toast · Delivery via DoorDash</span></div></li>
+      </ul>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+        <a class="btn btn-gold" href="#order">Order Online</a>
+        <a class="btn btn-ghost" href="tel:3526294700">Call to Reserve</a>
+      </div>
+    </div>
+    <div class="map-card">
+      <img src="img/say-taco-slider-7.jpg" alt="Say Taco on the Downtown Ocala Square">
+      <div class="mc-body">
+        <a class="btn btn-coral" href="https://maps.google.com/?q=Say+Taco+Ocala">Get Directions →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo"><img src="img/say-taco-top-logo-1-2x.png" alt="Say Taco Tequila Bar & Grill"></div>
+        <p>The best tacos in town, top-shelf tequila, and live music on the Downtown Ocala Square. Ain't no party like a taco party.</p>
+        <div class="socials">
+          <a href="https://instagram.com/saytaco.ocala" title="Instagram">IG</a>
+          <a href="https://facebook.com/profile.php?id=61572416280055" title="Facebook">FB</a>
+          <a href="#" title="TikTok">TT</a>
+          <a href="https://yelp.com/biz/sayulita-taqueria-ocala" title="Yelp">YP</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#about">About</a>
+        <a href="#menu">Our Menu</a>
+        <a href="#drinks">Tequila Bar</a>
+        <a href="#music">Live Music</a>
+        <a href="#visit">Visit Us</a>
+      </div>
+      <div class="foot-col">
+        <h4>Find Us</h4>
+        <a href="https://maps.google.com/?q=Say+Taco+Ocala">10 NE 1st St, Ocala FL</a>
+        <a href="tel:3526294700">(352) 629-4700</a>
+        <a href="#order">Order on Toast</a>
+        <a href="#order">Order on DoorDash</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2026 Say Taco Tequila Bar &amp; Grill · Downtown Ocala, Florida
+      <div><span class="pill">Redesign mockup · Benchmark Web Development</span></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
