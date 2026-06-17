@@ -34,9 +34,16 @@
 
   /* ---- Top utility bar ---- */
   .topbar{background:var(--ink-2);border-bottom:1px solid var(--line);font-size:13.5px;color:var(--cream-dim)}
-  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:42px;flex-wrap:wrap}
-  .topbar a{font-weight:600}
-  .topbar .dot{color:var(--gold);margin:0 10px;opacity:.6}
+  .topbar .wrap{display:flex;justify-content:center;align-items:center;gap:8px 28px;min-height:40px;flex-wrap:wrap}
+  .tb-item{display:inline-flex;align-items:center;gap:7px;color:var(--cream-dim);font-weight:600;white-space:nowrap}
+  .tb-item svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+  .tb-item:hover{color:var(--gold)}
+  .tb-sep{color:var(--gold);opacity:.45}
+  @media(max-width:600px){
+    .topbar{font-size:12.5px}
+    .topbar .wrap{gap:2px 16px;padding:7px 16px;min-height:0}
+    .tb-sep{display:none}
+  }
 
   /* ---- Header ---- */
   header{position:sticky;top:0;z-index:50;background:rgba(21,16,11,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -113,7 +120,7 @@
 
   /* Gallery */
   .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:228px;gap:14px}
-  .gallery img{width:100%;height:100%;object-fit:cover;border-radius:14px;display:block;transition:transform .35s ease;cursor:pointer}
+  .gallery img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:14px;display:block;transition:transform .35s ease;cursor:pointer}
   .gallery img:hover{transform:scale(1.04)}
   .gallery .tall{grid-row:span 2}
 
@@ -137,7 +144,9 @@
   .gmark span:nth-child(1){color:#4285F4}.gmark span:nth-child(2){color:#EA4335}.gmark span:nth-child(3){color:#FBBC05}
   .gmark span:nth-child(4){color:#4285F4}.gmark span:nth-child(5){color:#34A853}.gmark span:nth-child(6){color:#EA4335}
   .g-score{font-family:'Anton';font-size:54px;color:var(--gold);line-height:.9}
-  .g-stars{color:var(--gold);font-size:24px;letter-spacing:3px}
+  .g-stars{position:relative;display:inline-block;font-size:24px;line-height:1;letter-spacing:2px}
+  .g-stars .s-base{color:rgba(244,169,27,.32)}
+  .g-stars .s-fill{position:absolute;left:0;top:0;width:90%;overflow:hidden;white-space:nowrap;color:var(--gold)}
   .g-sub{color:var(--cream-dim);font-size:15px;margin-top:6px}
   .g-sub b{color:#fff}
 
@@ -199,8 +208,9 @@
 <!-- TOP UTILITY BAR -->
 <div class="topbar">
   <div class="wrap">
-    <div>📍 10 NE 1st St, Downtown Ocala <span class="dot">•</span> Open Tue–Sun</div>
-    <div><a href="tel:3526294700">📞 (352) 629-4700</a></div>
+    <a class="tb-item" href="https://maps.google.com/?q=Say+Taco+Ocala"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>10 NE 1st St, Downtown Ocala</a>
+    <span class="tb-sep">•</span>
+    <a class="tb-item" href="tel:3526294700"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>(352) 629-4700</a>
   </div>
 </div>
 
@@ -331,7 +341,7 @@
       <img src="img/say-taco-slider-7.jpg" alt="Packed bar at Say Taco">
       <img src="img/say-taco-post-4-1152x648.jpg" alt="Guests at the bar">
       <img src="img/say-taco-slider-8.jpg" alt="Patio party at Say Taco">
-      <img src="img/say-taco-post-84556.jpg" alt="Taco party box">
+      <img src="img/say-taco-post-234243-1152x648.jpg" alt="Friends out at Say Taco Ocala">
     </div>
   </div>
 </section>
@@ -362,7 +372,7 @@
       <div>
         <div style="display:flex;align-items:center;gap:14px">
           <span class="g-score count" data-target="4.3" data-dec="1">4.3</span>
-          <span class="g-stars">★★★★<span style="opacity:.38">★</span></span>
+          <span class="g-stars" title="4.3 out of 5"><span class="s-base">★★★★★</span><span class="s-fill">★★★★★</span></span>
         </div>
         <div class="g-sub"><b class="count" data-target="988">988</b> verified Google reviews &amp; counting</div>
       </div>
