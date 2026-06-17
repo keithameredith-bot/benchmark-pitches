@@ -183,6 +183,19 @@
   .copyright{border-top:1px solid var(--line);padding-top:26px;text-align:center;color:var(--muted);font-size:13px}
   .copyright .pill{display:inline-block;background:rgba(244,169,27,.1);color:var(--gold);padding:4px 12px;border-radius:50px;font-weight:600;margin-top:8px}
 
+  /* Mobile sticky action bar */
+  .mobile-bar{display:none}
+  @media(max-width:900px){
+    .mobile-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;
+      padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(18,13,8,.97);backdrop-filter:blur(12px);
+      border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(0,0,0,.4)}
+    .mobile-bar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 10px;border-radius:50px;font-weight:700;font-size:15.5px}
+    .mobile-bar .mb-dd{background:linear-gradient(135deg,var(--coral),var(--coral-deep));color:#fff}
+    .mobile-bar .mb-call{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#231603}
+    .mobile-bar svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+    body{padding-bottom:76px}
+  }
+
   /* Responsive */
   @media(max-width:900px){
     nav.main,.header-cta .btn{display:none}
@@ -447,6 +460,12 @@
     </div>
   </div>
 </footer>
+
+<!-- MOBILE STICKY ACTION BAR -->
+<div class="mobile-bar">
+  <a class="mb-dd" href="https://www.doordash.com/store/say-taco-ocala/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>DoorDash</a>
+  <a class="mb-call" href="tel:3526294700"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>Call</a>
+</div>
 
 <script>
   document.documentElement.classList.add('js');
